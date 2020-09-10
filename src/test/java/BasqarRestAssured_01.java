@@ -4,9 +4,8 @@ import org.apache.commons.lang3.RandomStringUtils;
 import org.testng.annotations.*;
 import java.util.*;
 import static io.restassured.RestAssured.*;
-import static org.hamcrest.Matchers.*;
 
-public class Repl {
+public class BasqarRestAssured_01 {
     private Cookies cookies;
     private String id;
 
@@ -30,7 +29,7 @@ public class Repl {
     }
 
     @Test
-    public void BasqarRestAssured_01_Creation() {
+    public void Creation() {
         BankAccounts accounts = new BankAccounts();
         String randomName = randomText( 5 );
         accounts.setName( randomName );
@@ -52,8 +51,8 @@ public class Repl {
         System.out.println( randomName );
     }
 
-    @Test(dependsOnMethods = "BasqarRestAssured_01_Creation" )
-    public void BasqarRestAssured_01_Deleting(){
+    @Test(dependsOnMethods = "Creation" )
+    public void Deleting(){
         given()
                 .cookies( cookies )
                 .when()
