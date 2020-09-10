@@ -29,7 +29,6 @@ public class BasqarRestAssured_03 {
     @Test
     public void CreatingNewGradeLevel() {
         GradeLevels levels = new GradeLevels();
-        new Random().nextInt( 5 );
         levels.setName( "100th grade" );
         levels.setShortName( "100th" );
         levels.setOrder( new Random().nextInt( 10 ) );
